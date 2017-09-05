@@ -39,6 +39,9 @@ parser.add_argument('-p', type=str, help="google 当然不能国内访问啦，�
 
 def get_credentials():
     credential_path = os.path.join(os.path.abspath(os.path.dirname(__file__)), 'calendar.json')
+    if not os.path.exists(credential_path):
+        from pathlib import Path
+        Path(credential_path).touch()
 
     store = Storage(credential_path)
     credentials = store.get()
@@ -52,7 +55,7 @@ def get_credentials():
     return credentials
 
 
-if __name__ == '__main__':
+def main():
     args = parser.parse_args()
     if not args.c:
         raise RuntimeError('你得告诉我课程json文件的位置')
