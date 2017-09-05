@@ -17,5 +17,9 @@ optional arguments:
   -d date          开学第一周的周一的年月日，例如 2017-09-01
   -p address:port  google 当然不能国内访问啦，你需要一个 socks5 代理，例如 localhost:1080
 ```
+或者用 pip 安装
+```
+$ pip install uestcct
+```
 # License
 GPL
